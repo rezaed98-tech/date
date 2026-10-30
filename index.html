@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff9f2">
+  <meta name="description" content="یک دعوت‌نامه کوچک، برای یک زنگ تفریح دونفره؛ مخصوص مهتا خانم.">
+  <title>مهتا خانم، بریم زنگ تفریح؟ 💌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+    /* همهٔ طرح در همین فایل است؛ فونت و کاغذرنگی به اینترنت نیاز دارند. */
+    :root{color-scheme:light;--ink:#554240;--muted:#93837d;--pink:#f18da5;--pink-dark:#9d3c59;--cream:#fff9f2;--line:#eaded4}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100svh;background-color:var(--cream);background-image:radial-gradient(#dfcfc1 0.8px,transparent 0.8px);background-size:23px 23px;color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif}
+    button,a{-webkit-tap-highlight-color:transparent;font:inherit}
+    button{cursor:pointer}
+    button:focus-visible,a:focus-visible{outline:3px solid #709eb4;outline-offset:5px}
+    [hidden]{display:none!important}
+    .page{width:min(1100px,100%);margin:auto;padding:26px 28px 18px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted)}
+    .brand{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--ink)}
+    .brand-icon{display:grid;place-items:center;width:33px;height:33px;background:#f9e3e8;border:1px solid #edcbd4;border-radius:11px;font-size:18px;transform:rotate(8deg)}
+    .serial{font-size:11px;letter-spacing:.2px}
+    main{position:relative;display:grid;place-items:center;padding:42px 0 24px}
+    .card{position:relative;width:min(650px,100%);text-align:center;background:#fffefa;border:1px solid var(--line);border-radius:28px;padding:33px 42px 25px;box-shadow:0 10px 0 -5px #f1e5da,0 22px 65px #8a675b0d}
+    .card:before{content:"";position:absolute;top:-13px;left:calc(50% - 49px);width:98px;height:27px;background:#f5dfb9b3;transform:rotate(-4deg);clip-path:polygon(3% 0,97% 3%,100% 92%,0 100%)}
+    .badge{display:inline-flex;align-items:center;gap:7px;background:#fff0f3;border:1px solid #f9dce5;border-radius:30px;padding:5px 13px;font-size:11px;color:var(--pink-dark)}
+    .badge i{width:6px;height:6px;background:#df829a;border-radius:50%}
+    .illustration{position:relative;width:220px;height:153px;margin:12px auto 1px}
+    .illustration svg{width:100%;height:100%;overflow:visible}
+    .floating-heart{position:absolute;left:18px;top:23px;color:#e9a1af;font-size:22px;animation:bob 3s ease-in-out infinite}
+    .salutation{margin:2px 0 7px;color:var(--pink-dark);font-size:14px;font-weight:600}
+    h1{font-size:clamp(21px,3.7vw,28px);font-weight:900;line-height:1.85;margin:0 auto 13px;max-width:480px;letter-spacing:-.8px}
+    .intro{font-size:13px;line-height:2.1;color:#8c7973;margin:0 auto 16px;max-width:460px}
+    .intro strong{font-weight:500;color:#6d5652}
+    .date-ticket{display:flex;justify-content:center;align-items:center;gap:24px;padding:13px 10px;margin:0 auto 18px;border:1px dashed #decdbb;border-radius:14px;background:#fffbef}
+    .date-part{display:flex;align-items:center;gap:9px;text-align:right}
+    .date-icon{font-size:23px}
+    .date-part small{display:block;font-size:10px;color:#9d8a79;margin-bottom:2px}
+    .date-part b{display:block;font-size:13px;font-weight:700}
+    .ticket-divider{width:1px;height:31px;background:#eadbca}
+    .question{margin:0 0 16px;font-size:13px;font-weight:600;line-height:2}
+    .actions{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;flex-wrap:wrap}
+    .yes,.telegram{border:1px solid #e47c98;border-radius:13px;background:var(--pink);color:#522c39;font-weight:800;padding:13px 22px;box-shadow:0 4px 0 #d87690;transition:background .2s}
+    .yes:hover,.telegram:hover{background:#f5a0b5}
+    .yes:active,.telegram:active{box-shadow:0 1px 0 #d87690;transform:translateY(3px)}
+    .no{border:1px solid #e8e1d9;border-radius:13px;background:#fffefa;color:#8e7d75;padding:12px 10px;font-size:12px;touch-action:none;z-index:20;white-space:nowrap;width:158px;height:46px;max-width:calc(100vw - 24px);user-select:none}
+    .no.escaped{position:fixed;box-shadow:0 5px 17px #69534b15}
+    .joke{min-height:23px;margin:13px 0 0;color:#a36f7e;font-size:11px;line-height:1.9}
+    .card-footer{display:flex;justify-content:center;align-items:center;gap:7px;border-top:1px solid #f0e7df;padding-top:14px;margin-top:13px;color:#ab9890;font-size:10px}
+    .card-footer span:first-child{font-size:15px}
+    .doodle{position:absolute;pointer-events:none;text-align:center;font-size:12px;color:#b49384;line-height:1.9}
+    .doodle svg{display:block;margin:auto}
+    .doodle-left{left:10px;top:36%;transform:rotate(-12deg)}
+    .doodle-right{right:7px;top:22%;transform:rotate(11deg)}
+    .doodle-star{left:11%;bottom:13%;font-size:38px;color:#e7c77b;transform:rotate(-14deg)}
+    .footer{text-align:center;font-size:10px;color:#ac9890;line-height:2}
+    .footer .heart{color:#d38b99}
+    .success{padding:22px 0 12px;animation:arrive .5s ease both}
+    .success-icon{font-size:67px;margin-bottom:15px;animation:bob 3s ease-in-out infinite}
+    .success h2{font-size:27px;margin:0 0 12px;color:#a54f69}
+    .success p{font-size:14px;line-height:2.2;margin:0 0 19px}
+    .success .confirmed{display:inline-block;padding:12px 17px;border:1px dashed #decdbb;background:#fffbef;border-radius:13px;font-weight:600}
+    .telegram{display:block;text-decoration:none;font-size:13px;margin:7px auto 16px;max-width:340px;line-height:1.9}
+    .success .draft-note{font-size:10px;color:var(--muted);margin:0;line-height:2}
+    .fallback-heart{position:fixed;z-index:50;pointer-events:none;top:-45px;font-size:23px;animation:heartfall 3s ease-in forwards}
+    /* پنل سازنده در لینک و فایل مخصوص مهمان نمایش داده نمی‌شود. */
+    .top-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+    .small-button{border:1px solid var(--line);border-radius:11px;padding:8px 11px;background:#fffefa;color:#775e58;font-size:11px;min-height:38px}
+    .small-button:hover{background:#fff0f3}
+    .workspace{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:28px;align-items:start;margin-top:28px}
+    .workspace.guest{display:block;margin-top:0}
+    .workspace:not(.guest) main{padding-top:18px}
+    .workspace:not(.guest) .doodle{display:none}
+    .workspace:not(.guest) .card{padding-inline:25px}
+    .editor{background:#fffefa;border:1px solid var(--line);border-radius:22px;padding:23px;box-shadow:0 12px 35px #8a675b08}
+    .eyebrow{font-size:10px;color:#a16c7a;letter-spacing:.2px;margin:0 0 6px}
+    .editor h2{font-size:21px;margin:0 0 6px;font-weight:900}
+    .hint{font-size:11px;color:var(--muted);line-height:2;margin:0 0 15px}
+    .editor label,.field-label{display:block;font-size:11px;font-weight:600;margin-bottom:6px}
+    .editor input,.editor select,.editor textarea,.range-picker input{width:100%;min-width:0;border:1px solid #e5d8ce;border-radius:10px;background:#fffcf8;color:var(--ink);padding:10px;font:inherit;font-size:12px;min-height:43px}
+    input:focus,select:focus,textarea:focus{outline:2px solid #d79cae;outline-offset:1px}
+    input[type="date"],input[type="time"]{direction:ltr;text-align:center}
+    .field{margin-bottom:13px;min-width:0}
+    .field small{display:block;font-size:10px;color:var(--muted);line-height:1.9;margin-top:5px}
+    .field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .editor .mode-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;background:#f6eee8;padding:5px;border-radius:12px;margin:5px 0 17px}
+    .mode-tabs label{position:relative;cursor:pointer;text-align:center;margin:0;font-size:10px;padding:9px 2px;border-radius:9px;color:#8c7770}
+    .mode-tabs label:has(input:checked){background:#fffefa;color:#9d3c59;box-shadow:0 2px 5px #775e5810}
+    .mode-tabs input{position:absolute;opacity:0;width:1px;min-height:0;height:1px;padding:0;inset:0}
+    .mode-tabs label:has(input:focus-visible){outline:2px solid #709eb4}
+    .editor fieldset{border:0;padding:0;margin:0;min-width:0}
+    .editor legend{font-size:12px;font-weight:700;margin-bottom:10px}
+    .option-editor{padding:12px;background:#fffbef;border:1px dashed #e4d2b9;border-radius:12px;margin-bottom:10px}
+    .option-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:11px;font-weight:600}
+    .remove-option{border:0;background:transparent;color:#a75f74;padding:5px 7px;font:inherit;font-size:10px}
+    .option-editor .field{margin:0}
+    .editor-divider{height:1px;background:#f0e7df;margin:18px 0}
+    .check-label{display:flex!important;align-items:center;gap:8px;line-height:2}
+    .editor input[type="checkbox"]{width:16px;height:16px;min-height:0;accent-color:#bf6c88}
+    .sound-samples{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:15px}
+    .output-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}
+    .output-actions button{font-size:11px;padding:11px 7px;min-height:44px}
+    .primary-small{border:1px solid #dc8ca4;background:#f6cfdb;color:#743e50;border-radius:11px;font-weight:700}
+    .editor-status{font-size:11px;line-height:2;color:#a64963;margin:10px 0 0;min-height:22px;overflow-wrap:anywhere}
+    .editor-status.ok{color:#64826a}
+    .link-output{margin-top:12px}
+    .link-output input{font-size:11px;direction:ltr;text-align:left;background:#f9f5f1}
+    .preview-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:22px;font-size:11px;color:#9d7c72}
+    .preview-tools button{font-size:10px}
+    .preview-wrap{min-width:0}
+    .time-options{border:0;padding:0;margin:0 0 17px;text-align:right;min-width:0}
+    .time-options legend{font-size:12px;font-weight:700;margin-bottom:9px}
+    .time-option{display:flex;align-items:center;gap:9px;padding:12px;background:#fffbf5;border:1px solid #e8dacf;border-radius:12px;margin-bottom:8px;cursor:pointer;font-size:12px;line-height:1.9}
+    .time-option:has(input:checked){background:#fff0f4;border-color:#db9baf;color:#9d3c59}
+    .time-option input{accent-color:#bb6683;flex:none;width:17px;height:17px;margin:0}
+    .range-picker{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:right;margin-bottom:8px}
+    .range-picker label{display:block;font-size:10px;margin-bottom:5px}
+    .selection-note{font-size:11px;line-height:1.9;color:#9d6676;margin:0 0 15px;min-height:21px}
+    .yes:disabled{opacity:.55;cursor:default;box-shadow:0 2px 0 #d9a5b3}
+    .no-home{display:inline-flex;width:158px;height:46px;flex:none}
+    .sound-hint{font-size:10px;color:#a58b80;line-height:1.9;margin:13px 0 0}
+    .date-ticket{flex-wrap:wrap;gap:14px;overflow-wrap:anywhere}
+    .salutation,.question,.confirmed,.intro,.footer,.place-note{overflow-wrap:anywhere}
+    .place-note{font-size:12px;color:#91786e;line-height:2;margin:0 0 13px;white-space:pre-line}
+    .page-alert{margin:18px auto;padding:12px 15px;max-width:650px;border:1px solid #e4bdc5;border-radius:12px;background:#fff0f4;font-size:12px;line-height:2}
+    .date-input-wrap{display:flex;align-items:stretch;gap:5px;min-width:0}
+    .date-input-wrap .solar-input{width:100%;min-width:0;direction:ltr;text-align:center;font-variant-numeric:tabular-nums}
+    .calendar-open{border:1px solid #e5d8ce;border-radius:10px;background:#fff4e2;padding:7px 9px;flex:none;font-size:17px}
+    .calendar-open:disabled{opacity:.4}
+    .solar-calendar{width:min(370px,calc(100vw - 28px));border:1px solid #e4cdbf;border-radius:22px;padding:22px;background:#fffefa;color:var(--ink);font-family:inherit;box-shadow:0 20px 80px #55424030;max-height:90svh;overflow:auto}
+    .solar-calendar::backdrop{background:#55424055;backdrop-filter:blur(3px)}
+    .calendar-title{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:16px}
+    .calendar-title h2{font-size:14px;margin:0}
+    .calendar-title button{border:0;background:transparent;color:#886860;font:inherit;padding:6px}
+    .calendar-nav{display:flex;gap:7px;align-items:center;margin-bottom:15px}
+    .calendar-nav select{min-width:0;flex:1;border:1px solid var(--line);border-radius:9px;padding:8px 5px;background:#fff9f2;font:inherit;font-size:12px;color:var(--ink)}
+    .calendar-nav button{border:0;background:#f8eee6;border-radius:9px;min-width:32px;min-height:36px;color:var(--ink);font-size:17px}
+    .calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;text-align:center}
+    .calendar-weekdays{font-size:10px;color:#9b8278;margin-bottom:8px}
+    .calendar-day{border:0;background:#fcf5ee;border-radius:9px;min-height:35px;font:inherit;font-size:12px;color:var(--ink)}
+    .calendar-day:hover,.calendar-day[aria-pressed="true"]{background:#f1b4c7;color:#75344d}
+    .calendar-day:disabled{opacity:.25;cursor:default}
+    .calendar-today{border:1px solid #ca8aa0}
+    .calendar-caption{font-size:10px;line-height:2;color:#9b8278;margin:13px 0 0;text-align:center}
+    @media(max-width:850px){.workspace{grid-template-columns:1fr;gap:23px}.editor{max-width:650px;width:100%;margin:auto}.preview-tools{max-width:650px;margin:0 auto 23px}.workspace:not(.guest) .card{padding-inline:27px}.workspace:not(.guest) main{padding-top:0}.serial{display:none}}
+    @media(max-width:520px){.topbar{align-items:flex-start}.brand{font-size:10px}.brand-icon{width:28px;height:28px;flex:none}.top-actions{max-width:180px}.small-button{font-size:10px;padding:7px 9px}.editor{padding:19px}.workspace{margin-top:22px}.no,.no-home{width:138px}.workspace:not(.guest) .card{padding-inline:19px}.output-actions{gap:6px}.yes{min-height:46px}.range-picker{gap:8px}.topbar .serial{display:none}}
+    noscript p{background:#fff0f3;border-radius:12px;padding:12px;font-size:12px;line-height:2}
+    @keyframes bob{50%{transform:translateY(-7px) rotate(5deg)}}
+    @keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes heartfall{to{transform:translateY(110vh) rotate(160deg);opacity:0}}
+    @media(min-width:1500px){main{padding-top:65px}}
+    @media(max-width:900px){.doodle{display:none}}
+    @media(max-width:520px){.page{padding:18px 16px}.topbar{font-size:10px}.serial{font-size:9px}main{padding:33px 0 22px}.card{padding:28px 21px 20px;border-radius:23px}.illustration{height:137px;width:200px;margin-top:10px}h1{font-size:22px;line-height:1.85;letter-spacing:-.5px}.intro{font-size:12px}.date-ticket{gap:17px}.date-part{gap:6px}.date-part b{font-size:12px}.date-icon{font-size:20px}.yes{font-size:12px;padding:13px 15px}.no{font-size:11px;padding:12px}.question{font-size:12px}.card-footer{font-size:9px}.success h2{font-size:24px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon" aria-hidden="true">💌</span> ادارهٔ امور زنگ تفریح</div>
+      <div class="top-actions">
+        <button class="small-button" id="sound-toggle" type="button" aria-pressed="false">🔊 فعال‌کردن صدا</button>
+        <button class="small-button" id="editor-toggle" type="button" aria-expanded="true" aria-controls="editor">پنهان‌کردن تنظیمات</button>
+      </div>
+    </header>
+    <p class="page-alert" id="page-alert" role="alert" hidden></p>
+    <div class="workspace" id="workspace">
+      <aside class="editor" id="editor" aria-labelledby="editor-title">
+        <p class="eyebrow">۰۱ / اول، قرار رو بچین</p>
+        <h2 id="editor-title">دعوت‌نامه‌ساز 🖍️</h2>
+        <p class="hint">تنظیم کن، این پایین امتحانش کن و نسخهٔ مخصوص مهمانت را بفرست.</p>
+        <form id="settings-form">
+          <div class="field-grid">
+            <div class="field"><label for="recipient">برای کی؟</label><input id="recipient" name="recipient" maxlength="50" required value="مهتا خانم" autocomplete="off"></div>
+            <div class="field"><label for="sender">از طرف کی؟</label><input id="sender" name="sender" maxlength="50" value="همکلاسی مهدکودک" required autocomplete="off"></div>
+          </div>
+          <div class="field"><label for="activity">برنامهٔ زنگ تفریح</label><input id="activity" name="activity" maxlength="100" required value="بستنی/قهوه" placeholder="مثلاً بستنی و قدم‌زدن"></div>
+          <div class="field"><label for="place">کجا؟ <span class="hint">(اختیاری)</span></label><input id="place" name="place" maxlength="140" placeholder="مثلاً کافهٔ همیشگی"></div>
+          <span class="field-label" id="mode-label">زمان قرار را چطور پیشنهاد بدیم؟</span>
+          <div class="mode-tabs" role="group" aria-labelledby="mode-label">
+            <label><input type="radio" name="mode" value="single" checked>یک زمان دقیق</label>
+            <label><input type="radio" name="mode" value="range">یک بازه</label>
+            <label><input type="radio" name="mode" value="choices">چند پیشنهاد</label>
+          </div>
+          <fieldset id="fixed-fields">
+            <legend id="fixed-legend">زمان زنگ تفریح</legend>
+            <div class="field-grid">
+              <div class="field"><label for="date">تاریخ شمسی <span id="start-label" hidden>شروع</span></label><input type="text" class="solar-input" id="date" name="date" inputmode="numeric" placeholder="۱۴۰۵/۰۸/۰۸" maxlength="10" required><small id="persian-date"></small></div>
+              <div class="field"><label for="start">ساعت <span id="time-start-label" hidden>شروع</span></label><input type="time" id="start" name="start" value="16:30" required></div>
+            </div>
+            <div class="field-grid" id="range-fields" hidden>
+              <div class="field"><label for="end-date">تا تاریخ شمسی</label><input type="text" class="solar-input" id="end-date" name="endDate" inputmode="numeric" placeholder="۱۴۰۵/۰۸/۰۸" maxlength="10"><small id="persian-end-date"></small></div>
+              <div class="field"><label for="end">تا ساعت</label><input type="time" id="end" name="end" value="18:30"></div>
+            </div>
+          </fieldset>
+          <fieldset id="choice-fields" hidden>
+            <legend>۲ تا ۵ زمان؛ انتخاب با مهمان 🌷</legend>
+            <div id="option-editors"></div>
+            <button type="button" class="small-button" id="add-option">＋ یک پیشنهاد دیگر</button>
+          </fieldset>
+          <p class="hint">تمام تاریخ‌ها شمسی‌اند. با دکمهٔ 🗓️ از تقویم انتخاب کن یا به شکل «۱۴۰۵/۰۸/۰۸» بنویس؛ روز هفته خودکار حساب می‌شود.</p>
+          <div class="field"><label for="note">یک یادداشت کوچولو <span class="hint">(اختیاری)</span></label><textarea id="note" name="note" rows="2" maxlength="240" placeholder="مدادرنگی‌ها با من، لبخندت با تو! 🌸"></textarea></div>
+          <div class="field"><label for="telegram-user">آیدی تلگرام برای تأیید</label><input id="telegram-user" name="telegram" dir="ltr" value="peykanfar" maxlength="33" required pattern="@?[A-Za-z][A-Za-z0-9_]{4,31}" placeholder="peykanfar"><small>فقط آیدی؛ بدون لینک. مهمان پیام آماده را خودش ارسال می‌کند.</small></div>
+          <div class="editor-divider"></div>
+          <label class="check-label"><input type="checkbox" id="sounds-enabled" name="sounds" checked> افکت‌های صوتی دعوت‌نامه روشن باشد</label>
+          <div class="sound-samples">
+            <button type="button" class="small-button" data-sound="boing">🫧 صدای فرار</button>
+            <button type="button" class="small-button" data-sound="celebrate">👏 صدای تشویق</button>
+            <button type="button" class="small-button" data-sound="confirm">✨ صدای تأیید</button>
+          </div>
+          <div class="editor-divider"></div>
+          <p class="eyebrow">۰۲ / آمادهٔ فرستادن؟</p>
+          <p class="hint">لینک، دعوت‌نامه را با همین تنظیمات باز می‌کند. نسخهٔ مهمان پنل تنظیمات ندارد.</p>
+          <div class="output-actions">
+            <button type="button" class="primary-small" id="copy-link">کپی لینک دعوت 🔗</button>
+            <button type="button" class="small-button" id="download-html">دانلود فایل HTML ↓</button>
+          </div>
+          <div id="link-output" class="link-output" hidden><label for="share-link">لینک آمادهٔ ارسال</label><input id="share-link" readonly dir="ltr"><button type="button" class="small-button" id="open-link">بازکردن نسخهٔ مهمان ↗</button></div>
+          <p id="editor-status" class="editor-status" role="status" aria-live="polite"></p>
+        </form>
+      </aside>
+      <div class="preview-wrap">
+        <div class="preview-tools" id="preview-tools"><span>پیش‌نمایش زندهٔ دعوت‌نامه ✨</span><button type="button" class="small-button" id="reset-preview">شروع دوبارهٔ پیش‌نمایش ↺</button></div>
+        <main>
+      <div class="doodle doodle-left" aria-hidden="true">
+        <svg width="89" height="99" viewBox="0 0 89 99" fill="none"><path d="M24 79 31 22 43 10 49 25 42 82Z" fill="#b8d6dd" stroke="#799ca9" stroke-width="2"/><path d="m31 22 12-12 6 15Z" fill="#eed5b4"/><path d="m43 10-3 8 6 1Z" fill="#799ca9"/><path d="m35 30-5 42" stroke="#fff" stroke-width="3"/><path d="m49 85 9-54 12-12 5 16-10 53Z" fill="#efb5bf" stroke="#bd8995" stroke-width="2"/><path d="m58 31 12-12 5 16Z" fill="#eed5b4"/><path d="m70 19-3 8 6 1Z" fill="#bd8995"/><path d="m61 40-6 34" stroke="#fff" stroke-width="3"/><path d="M11 90q29 7 64 0" stroke="#d6bdac" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 5"/></svg>
+        با مدادرنگی نوشتمش :)</div>
+      <div class="doodle doodle-right" aria-hidden="true">
+        <svg width="88" height="73" viewBox="0 0 88 73" fill="none"><path d="M44 61S8 41 14 22C20 4 38 12 44 23 51 9 71 7 76 24 81 41 44 61 44 61Z" fill="#f9dce2" stroke="#d7a0ac" stroke-width="2" stroke-linejoin="round"/><path d="m7 9 7 5M73 6l-3 7M83 48l-7-1" stroke="#d8b37d" stroke-width="2" stroke-linecap="round"/></svg>
+        مخصوص هم‌نیمکتیِ سابق</div>
+      <span class="doodle doodle-star" aria-hidden="true">✧</span>
+
+      <article class="card" id="invitation-card" aria-label="دعوت‌نامهٔ مهتا خانم">
+        <div class="badge"><i aria-hidden="true"></i> یک دعوتِ کوچولو، با کلی ذوق</div>
+        <section id="invitation">
+          <!-- تصویر برداری داخلی: بدون فایل تصویری یا درخواست شبکهٔ اضافه. -->
+          <div class="illustration" aria-hidden="true">
+            <span class="floating-heart">♡</span>
+            <svg viewBox="0 0 220 153" fill="none">
+              <ellipse cx="111" cy="137" rx="68" ry="6" fill="#f1e8df"/>
+              <path d="m57 69 27 66 30-66" fill="#f0d0a4" stroke="#b59473" stroke-width="2.3" stroke-linejoin="round"/>
+              <path d="m65 88 27 29M72 76l28 29M105 85l-29 29M97 76 68 99" stroke="#d4ae80" stroke-width="1.6"/>
+              <path d="M56 69c-14-5-13-22-3-29-3-16 15-26 27-19 13-10 33 0 31 15 16 7 17 25 2 32-5 8-15 7-20 2-5 8-16 8-22 1-6 4-12 3-15-2Z" fill="#f6b7c7" stroke="#b7808c" stroke-width="2.3"/>
+              <path d="M61 38c2-6 7-9 13-8" stroke="#ffedf1" stroke-width="4" stroke-linecap="round"/>
+              <path d="M70 53v4m24-4v4" stroke="#76554f" stroke-width="3" stroke-linecap="round"/>
+              <path d="M78 61q5 6 10 0" stroke="#76554f" stroke-width="2" stroke-linecap="round"/>
+              <ellipse cx="64" cy="61" rx="5" ry="2.6" fill="#e993aa"/><ellipse cx="100" cy="61" rx="5" ry="2.6" fill="#e993aa"/>
+              <g transform="rotate(9 150 98)"><path d="M126 80h47l-5 47q-19 8-36 0Z" fill="#bcdce4" stroke="#7c9ca6" stroke-width="2.3"/><path d="M129 88h41l-2 24h-37Z" fill="#fffbef"/><path d="M174 87c23-2 18 28-3 24" stroke="#7c9ca6" stroke-width="3"/><path d="M124 79h51" stroke="#7c9ca6" stroke-width="4" stroke-linecap="round"/><path d="M145 94c-9-7-14 7 5 14 17-13 6-21-5-14Z" fill="#e7a3b4"/></g>
+              <path d="M141 65c-8-9 8-11 1-21m14 20c-7-8 8-13 2-20" stroke="#cdb9a9" stroke-width="2" stroke-linecap="round"/>
+              <path d="m181 29 2 7 7 2-7 2-2 7-2-7-7-2 7-2Z" fill="#ead18e"/>
+              <path d="m32 90 1 5 5 1-5 2-1 5-2-5-5-2 5-1Z" fill="#bad5df"/>
+            </svg>
+          </div>
+          <p class="salutation" id="salutation">مهتا خانمِ عزیز،</p>
+          <h1>دعوت‌نامه رسمی از طرف<br><span id="sender-title">همکلاسی مهدکودک</span> 🎒✨</h1>
+          <p class="intro">یادته بهترین قسمت مهدکودک، زنگ تفریحش بود؟<br>یه زنگ تفریح دیگه بدهکاریم؛ این بار با <strong>بستنی، قهوه و کلی شیطنت!</strong></p>
+          <div class="date-ticket" id="date-ticket">
+            <div class="date-part"><span class="date-icon" aria-hidden="true">🗓️</span><div><small id="day-caption">روز زنگ تفریح</small><b id="date-label"></b></div></div>
+            <span class="ticket-divider" aria-hidden="true"></span>
+            <div class="date-part"><span class="date-icon" aria-hidden="true">⏰</span><div><small id="time-caption">سرِ وقت بیا، همکلاسی!</small><b id="time-label"></b></div></div>
+          </div>
+          <p class="place-note" id="place-note" hidden></p>
+          <p class="question" id="question"></p>
+          <fieldset class="time-options" id="time-options" hidden><legend>کدوم زنگ تفریح رو انتخاب می‌کنی؟ 🥰</legend><div id="recipient-options"></div></fieldset>
+          <div id="range-selection" hidden>
+            <div class="range-picker">
+              <div><label for="pick-date">روز دلخواهت داخل بازه (شمسی)</label><input type="text" class="solar-input" id="pick-date" inputmode="numeric" placeholder="سال/ماه/روز" maxlength="10"></div>
+              <div><label for="pick-time">ساعت دلخواهت داخل بازه</label><input type="time" id="pick-time"></div>
+            </div>
+          </div>
+          <p class="selection-note" id="selection-note" role="status" aria-live="polite" hidden></p>
+          <div class="actions">
+            <button class="yes" id="yes" type="button">بله، با کمال میل میام 😍</button>
+            <span class="no-home"><button class="no" id="no" type="button" aria-describedby="joke">نه، سرم شلوغه 🙈</button></span>
+          </div>
+          <p class="joke" id="joke" role="status" aria-live="polite">شنیدم دکمهٔ «نه» امروز یکم شیطون شده… 👀</p>
+          <p class="sound-hint" id="sound-hint">برای شنیدن شیطنت‌ها، بالای صفحه «فعال‌کردن صدا» را بزن 🔊</p>
+        </section>
+
+        <section class="success" id="success" hidden aria-labelledby="success-title">
+          <div class="success-icon" aria-hidden="true">🥳💗</div>
+          <h2 id="success-title" tabindex="-1">هورااا! قرارمون قطعی شد 🎉</h2>
+          <p>بهترین زنگ تفریح دنیا در راهه!<br>مدادرنگی‌ها با من، لبخند قشنگت با تو 🌸</p>
+          <p class="confirmed" id="confirmed"></p>
+          <a class="telegram" id="telegram" target="_blank" rel="noopener noreferrer">ثبت و ارسال تاییدیه در تلگرام 💌</a>
+          <p class="draft-note">پیام تأیید در تلگرام آماده می‌شود؛ برای ارسال، دکمهٔ ارسال را بزن.</p>
+          <button type="button" class="small-button" id="change-selection" hidden>عوض‌کردن زمان انتخابی ↺</button>
+        </section>
+        <div class="card-footer"><span aria-hidden="true">🖍️</span><span>با تأیید واحد بستنی و شیطنت · مهدکودکِ خاطره‌ها</span></div>
+        <noscript><p>برای شیطنت‌های این دعوت‌نامه، جاوااسکریپت را فعال کن 🌸<br><a href="https://t.me/peykanfar">رفتن به گفت‌وگوی تلگرام</a></p></noscript>
+      </article>
+        </main>
+      </div>
+    </div>
+    <footer class="footer">ساخته شده با یک جعبه مدادرنگی و کلی <span class="heart">♡</span><br><span id="footer-recipient">فقط برای مهتا خانم</span></footer>
+  </div>
+  <dialog class="solar-calendar" id="solar-calendar" aria-labelledby="calendar-title">
+    <div class="calendar-title"><h2 id="calendar-title">روز زنگ تفریح رو انتخاب کن 🗓️</h2><button type="button" id="calendar-close" aria-label="بستن تقویم">✕</button></div>
+    <div class="calendar-nav">
+      <button type="button" id="calendar-prev" aria-label="ماه قبل">‹</button>
+      <select id="calendar-month" aria-label="ماه شمسی"></select>
+      <select id="calendar-year" aria-label="سال شمسی"></select>
+      <button type="button" id="calendar-next" aria-label="ماه بعد">›</button>
+    </div>
+    <div class="calendar-weekdays" aria-hidden="true"><span>ش</span><span>ی</span><span>د</span><span>س</span><span>چ</span><span>پ</span><span>ج</span></div>
+    <div class="calendar-days" id="calendar-days" role="group" aria-label="روزهای ماه"></div>
+    <p class="calendar-caption" id="calendar-caption">تقویم هجری شمسی · هفته از شنبه شروع می‌شود</p>
+  </dialog>
+  <!-- نسخهٔ دانلودی فقط این داده را تغییر می‌دهد؛ متن کاربر هرگز به HTML اجراشدنی تبدیل نمی‌شود. -->
+  <script type="application/json" id="invitation-config">{"v":1,"mode":"builder","config":null}</script>
+  <script>
+    (() => {
+      'use strict';
+      const $ = id => document.getElementById(id);
+      // قالب دست‌نخورده را نگه می‌داریم؛ خروجی فایل هیچ حالتِ پیش‌نمایش یا تأیید قبلی ندارد.
+      const sourceHTML = '<!doctype html>\n' + document.documentElement.outerHTML;
+      const form = $('settings-form');
+      const yesButton = $('yes');
+      const noButton = $('no');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const faNumber = value => String(value).replace(/\d/g, digit => '۰۱۲۳۴۵۶۷۸۹'[digit]);
+      const dateFormatter = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'
+      });
+      const solarPartsFormatter = new Intl.DateTimeFormat('en-US', {
+        calendar: 'persian', numberingSystem: 'latn', year: 'numeric', month: 'numeric', day: 'numeric', timeZone: 'UTC'
+      });
+      const solarMonths = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'];
+      let calendarTarget = null;
+      let calendarYear = 1405;
+      let calendarMonth = 1;
+      let config;
+      let guest = false;
+      let selected = null;
+      let accepted = false;
+      let attempts = 0;
+      let lastEscape = -Infinity;
+      let celebrationTimers = [];
+
+      function isoDate(date) {
+        return [date.getFullYear(), String(date.getMonth() + 1).padStart(2, '0'), String(date.getDate()).padStart(2, '0')].join('-');
+      }
+      function addDays(iso, days) {
+        const date = new Date(iso + 'T12:00:00');
+        date.setDate(date.getDate() + days);
+        return isoDate(date);
+      }
+      function nextFriday() {
+        const date = new Date();
+        date.setDate(date.getDate() + ((5 - date.getDay() + 7) % 7 || 7));
+        return isoDate(date);
+      }
+      function validDate(value) {
+        if (typeof value !== 'string' || !/^(19|20|21)\d{2}-\d{2}-\d{2}$/.test(value)) return false;
+        const date = new Date(value + 'T12:00:00Z');
+        return !Number.isNaN(date.valueOf()) && date.toISOString().slice(0, 10) === value;
+      }
+      const validTime = value => typeof value === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(value);
+      const stamp = (date, time) => date + 'T' + time;
+      const showDate = iso => dateFormatter.format(new Date(iso + 'T12:00:00Z'));
+      function showTime(value) {
+        const [hour, minute] = value.split(':').map(Number);
+        const period = hour < 12 ? 'صبح' : hour < 18 ? 'بعد از ظهر' : 'شب';
+        return faNumber((hour % 12 || 12) + ':' + String(minute).padStart(2, '0')) + ' ' + period;
+      }
+      const showSlot = slot => showDate(slot.date) + '، ساعت ' + showTime(slot.time);
+
+      // تبدیل رفت‌وبرگشت فقط با تقویم فارسیِ Intl؛ سال کبیسه هم از خود تقویم گرفته می‌شود.
+      // ISO فقط قرارداد داخلیِ ذخیره‌سازی است و در هیچ فیلد یا کارت به کاربر نشان داده نمی‌شود.
+      function solarParts(iso) {
+        const parts = solarPartsFormatter.formatToParts(new Date(iso + 'T12:00:00Z'));
+        return ['year', 'month', 'day'].map(type => Number(parts.find(part => part.type === type).value));
+      }
+      function solarToISO(year, month, day) {
+        if (!Number.isInteger(year) || year < 1280 || year > 1578 || month < 1 || month > 12 || day < 1 || day > 31) return '';
+        let low = Math.floor(Date.UTC(year + 621, 0, 1) / 86400000);
+        let high = Math.floor(Date.UTC(year + 622, 11, 31) / 86400000);
+        const target = year * 10000 + month * 100 + day;
+        while (low <= high) {
+          const middle = Math.floor((low + high) / 2);
+          const iso = new Date(middle * 86400000).toISOString().slice(0, 10);
+          const [y, m, d] = solarParts(iso);
+          const value = y * 10000 + m * 100 + d;
+          if (value === target) return validDate(iso) ? iso : '';
+          if (value < target) low = middle + 1;
+          else high = middle - 1;
+        }
+        return '';
+      }
+      function solarText(iso) {
+        if (!validDate(iso)) return '';
+        const [year, month, day] = solarParts(iso);
+        return faNumber(year + '/' + String(month).padStart(2, '0') + '/' + String(day).padStart(2, '0'));
+      }
+      function readSolar(input) {
+        const value = input.value.trim().replace(/[۰-۹]/g, digit => '۰۱۲۳۴۵۶۷۸۹'.indexOf(digit))
+          .replace(/[٠-٩]/g, digit => '٠١٢٣٤٥٦٧٨٩'.indexOf(digit));
+        const match = value.match(/^(\d{4})[/.-](\d{1,2})[/.-](\d{1,2})$/);
+        return match ? solarToISO(Number(match[1]), Number(match[2]), Number(match[3])) : '';
+      }
+      function validateSolar(input) {
+        const iso = readSolar(input);
+        input.setCustomValidity(input.value && !iso ? 'تاریخ شمسی معتبر به شکل سال/ماه/روز بنویس؛ مثلاً ۱۴۰۵/۰۸/۰۸.' : '');
+        return iso;
+      }
+      function decorateSolar(input) {
+        if (input.parentElement.classList.contains('date-input-wrap')) return;
+        const wrapper = document.createElement('span');
+        wrapper.className = 'date-input-wrap';
+        input.parentNode.insertBefore(wrapper, input);
+        wrapper.appendChild(input);
+        const button = document.createElement('button');
+        button.type = 'button'; button.className = 'calendar-open'; button.textContent = '🗓️';
+        button.setAttribute('aria-label', 'بازکردن تقویم شمسی');
+        button.addEventListener('click', () => {
+          calendarTarget = input;
+          const iso = readSolar(input) || input.dataset.min || isoDate(new Date());
+          [calendarYear, calendarMonth] = solarParts(iso);
+          renderCalendar();
+          $('solar-calendar').showModal();
+        });
+        wrapper.appendChild(button);
+        input.addEventListener('input', () => validateSolar(input));
+      }
+      function renderCalendar() {
+        $('calendar-year').value = String(calendarYear);
+        $('calendar-month').value = String(calendarMonth);
+        const days = $('calendar-days');
+        days.replaceChildren();
+        const first = solarToISO(calendarYear, calendarMonth, 1);
+        if (!first) return;
+        const offset = (new Date(first + 'T12:00:00Z').getUTCDay() + 1) % 7;
+        for (let i = 0; i < offset; i++) days.appendChild(document.createElement('span'));
+        const selectedISO = readSolar(calendarTarget);
+        const today = isoDate(new Date());
+        for (let day = 1; day <= 31; day++) {
+          const iso = solarToISO(calendarYear, calendarMonth, day);
+          if (!iso) break;
+          const button = document.createElement('button');
+          button.type = 'button'; button.className = 'calendar-day'; button.textContent = faNumber(day);
+          button.setAttribute('aria-label', showDate(iso));
+          button.setAttribute('aria-pressed', String(iso === selectedISO));
+          if (iso === today) { button.classList.add('calendar-today'); button.setAttribute('aria-current', 'date'); }
+          button.disabled = Boolean((calendarTarget.dataset.min && iso < calendarTarget.dataset.min) || (calendarTarget.dataset.max && iso > calendarTarget.dataset.max));
+          button.addEventListener('click', () => {
+            calendarTarget.value = solarText(iso);
+            calendarTarget.setCustomValidity('');
+            calendarTarget.dispatchEvent(new Event('input', { bubbles: true }));
+            calendarTarget.dispatchEvent(new Event('change', { bubbles: true }));
+            $('solar-calendar').close();
+            calendarTarget.focus({ preventScroll: true });
+          });
+          days.appendChild(button);
+        }
+        $('calendar-caption').textContent = 'تقویم هجری شمسی · ' + solarMonths[calendarMonth - 1] + ' ' + faNumber(calendarYear);
+        $('calendar-prev').disabled = calendarYear <= 1280 && calendarMonth === 1;
+        $('calendar-next').disabled = calendarYear >= 1578 && calendarMonth === 12;
+      }
+      function turnCalendar(direction) {
+        calendarMonth += direction;
+        if (calendarMonth > 12) { calendarMonth = 1; calendarYear++; }
+        if (calendarMonth < 1) { calendarMonth = 12; calendarYear--; }
+        renderCalendar();
+      }
+
+      // دادهٔ لینک و فرم هر دو از همین اعتبارسنجی می‌گذرند؛ تاریخ و بازهٔ نامعتبر صادر نمی‌شود.
+      function normalize(input) {
+        if (!input || typeof input !== 'object') throw new Error('اطلاعات دعوت‌نامه کامل نیست.');
+        function text(key, max, required = false) {
+          const value = typeof input[key] === 'string' ? input[key].trim() : '';
+          if ((required && !value) || value.length > max) throw new Error('نام، برنامه و آیدی را کامل و کوتاه وارد کن.');
+          return value;
+        }
+        const result = {
+          recipient: text('recipient', 50, true), sender: text('sender', 50, true),
+          activity: text('activity', 100, true), place: text('place', 140), note: text('note', 240),
+          telegram: text('telegram', 33, true).replace(/^@/, ''), sounds: input.sounds !== false,
+          mode: input.mode, date: '', start: '', endDate: '', end: '', options: []
+        };
+        if (!/^[A-Za-z][A-Za-z0-9_]{4,31}$/.test(result.telegram)) throw new Error('آیدی تلگرام باید ۵ تا ۳۲ حرف انگلیسی، عدد یا زیرخط باشد و با حرف شروع شود.');
+        if (!['single', 'range', 'choices'].includes(result.mode)) throw new Error('روش پیشنهاد زمان را انتخاب کن.');
+        if (result.mode === 'choices') {
+          if (!Array.isArray(input.options) || input.options.length < 2 || input.options.length > 5) throw new Error('بین ۲ تا ۵ پیشنهاد زمان وارد کن.');
+          result.options = input.options.map(option => {
+            if (!option || !validDate(option.date) || !validTime(option.time)) throw new Error('تاریخ و ساعت همهٔ پیشنهادها را کامل کن.');
+            return { date: option.date, time: option.time };
+          });
+          if (new Set(result.options.map(option => stamp(option.date, option.time))).size !== result.options.length) throw new Error('پیشنهادهای تکراری را تغییر بده.');
+        } else {
+          if (!validDate(input.date) || !validTime(input.start)) throw new Error('تاریخ و ساعت قرار را کامل کن.');
+          result.date = input.date;
+          result.start = input.start;
+          if (result.mode === 'range') {
+            if (!validDate(input.endDate) || !validTime(input.end)) throw new Error('پایان بازه را هم مشخص کن.');
+            if (stamp(input.endDate, input.end) <= stamp(input.date, input.start)) throw new Error('پایان بازه باید بعد از شروع آن باشد.');
+            result.endDate = input.endDate;
+            result.end = input.end;
+          }
+        }
+        return result;
+      }
+
+      function encodePayload(value) {
+        const bytes = new TextEncoder().encode(JSON.stringify({ v: 1, config: value }));
+        return btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+      }
+      function decodePayload(value) {
+        if (value.length > 24000 || !/^[A-Za-z0-9_-]+$/.test(value)) throw new Error('لینک ناقص است.');
+        const binary = atob(value.replace(/-/g, '+').replace(/_/g, '/'));
+        const payload = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(Uint8Array.from(binary, char => char.charCodeAt(0))));
+        if (payload.v !== 1) throw new Error('نسخهٔ لینک پشتیبانی نمی‌شود.');
+        return normalize(payload.config);
+      }
+      function buildInvitationHTML(value) {
+        // دادهٔ مهمان داخل یک تگ JSON قرار می‌گیرد؛ < هرگز اجازهٔ بستن تگ را ندارد.
+        const data = JSON.stringify({ v: 1, mode: 'invite', config: value }).replace(/</g, '\\u003c');
+        const title = (value.recipient + '، بریم زنگ تفریح؟ 💌').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+        return sourceHTML
+          .replace(/(<script\b[^>]*\bid="invitation-config"[^>]*>)[\s\S]*?(<\/script>)/, (_, open, close) => open + data + close)
+          .replace(/<title>[\s\S]*?<\/title>/, () => '<title>' + title + '</title>');
+      }
+
+      try {
+        const seed = JSON.parse($('invitation-config').textContent);
+        if (location.hash.startsWith('#invite=')) {
+          config = decodePayload(location.hash.slice(8));
+          guest = true;
+        } else if (seed.mode === 'invite') {
+          if (seed.v !== 1) throw new Error('نسخهٔ فایل پشتیبانی نمی‌شود.');
+          config = normalize(seed.config);
+          guest = true;
+        } else {
+          config = normalize({ recipient: 'مهتا خانم', sender: 'همکلاسی مهدکودک', activity: 'بستنی/قهوه',
+            telegram: 'peykanfar', sounds: true, mode: 'single', date: nextFriday(), start: '16:30' });
+        }
+      } catch (error) {
+        $('workspace').hidden = true;
+        $('editor-toggle').hidden = true;
+        $('sound-toggle').hidden = true;
+        $('page-alert').hidden = false;
+        $('page-alert').textContent = 'این دعوت‌نامه کامل باز نشد. لطفاً لینک یا فایل کامل را دوباره از فرستنده بگیر. ';
+        const restart = document.createElement('a');
+        restart.textContent = 'بازگشت به دعوت‌نامه‌ساز';
+        restart.href = location.pathname + location.search;
+        $('page-alert').appendChild(restart);
+        return;
+      }
+
+      /* افکت‌های واقعی Web Audio: بویینگ، زنگ تأیید و دست‌زدنِ ساخته‌شده از نویز.
+         بدون فایل صوتی، موسیقی پس‌زمینه یا CDN. صدا فقط بعد از تعامل کاربر فعال می‌شود. */
+      const audio = {
+        context: null, master: null, enabled: config.sounds, noise: null, serial: 0,
+        unlock() {
+          if (!this.enabled) return;
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContext) { updateSoundUI(true); return; }
+          try {
+            if (!this.context || this.context.state === 'closed') {
+              this.context = new AudioContext();
+              this.master = this.context.createGain();
+              this.master.gain.value = 0.28;
+              this.master.connect(this.context.destination);
+            }
+            const promise = this.context.state === 'running' ? Promise.resolve() : this.context.resume();
+            promise.then(() => updateSoundUI()).catch(() => updateSoundUI());
+          } catch (error) { updateSoundUI(true); }
+        },
+        setEnabled(enabled) {
+          this.enabled = enabled;
+          this.serial++;
+          if (this.master) this.master.gain.setValueAtTime(enabled ? 0.28 : 0, this.context.currentTime);
+          updateSoundUI();
+        },
+        tone(frequency, start, duration, volume = 0.2, to = frequency, type = 'sine') {
+          const oscillator = this.context.createOscillator();
+          const gain = this.context.createGain();
+          oscillator.type = type;
+          oscillator.frequency.setValueAtTime(frequency, start);
+          oscillator.frequency.exponentialRampToValueAtTime(to, start + duration);
+          gain.gain.setValueAtTime(0.0001, start);
+          gain.gain.exponentialRampToValueAtTime(volume, start + 0.012);
+          gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+          oscillator.connect(gain).connect(this.master);
+          oscillator.start(start);
+          oscillator.stop(start + duration + 0.02);
+          oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
+        },
+        clap(start, volume) {
+          if (!this.noise) {
+            this.noise = this.context.createBuffer(1, this.context.sampleRate * 0.15, this.context.sampleRate);
+            const data = this.noise.getChannelData(0);
+            for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+          }
+          const source = this.context.createBufferSource();
+          const filter = this.context.createBiquadFilter();
+          const gain = this.context.createGain();
+          source.buffer = this.noise;
+          filter.type = 'highpass';
+          filter.frequency.value = 1100;
+          gain.gain.setValueAtTime(volume, start);
+          gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.13);
+          source.connect(filter).connect(gain).connect(this.master);
+          source.start(start);
+          source.stop(start + 0.15);
+          source.onended = () => { source.disconnect(); filter.disconnect(); gain.disconnect(); };
+        },
+        async play(kind) {
+          if (!this.enabled || !this.context) return;
+          const serial = this.serial;
+          try {
+            if (this.context.state !== 'running') await this.context.resume();
+            if (!this.enabled || serial !== this.serial || this.context.state !== 'running') return;
+            const now = this.context.currentTime + 0.015;
+            if (kind === 'boing') {
+              const frequency = [420, 520, 620, 730][attempts % 4];
+              this.tone(frequency, now, 0.18, 0.45, 140, 'triangle');
+              this.tone(190, now + 0.13, 0.16, 0.25, 580, 'sine');
+            } else if (kind === 'celebrate') {
+              [523.25, 659.25, 783.99, 1046.5].forEach((frequency, i) => this.tone(frequency, now + i * 0.12, 0.38, 0.24));
+              for (let i = 0; i < 18; i++) this.clap(now + 0.2 + i * 0.065, 0.35 + Math.random() * 0.2);
+            } else {
+              this.tone(659.25, now, 0.18, 0.32);
+              this.tone(987.77, now + 0.12, 0.34, 0.28);
+            }
+          } catch (error) { /* خرابی صدا هیچ‌وقت انتخاب زمان یا تأیید را متوقف نمی‌کند. */ }
+        }
+      };
+
+      function updateSoundUI(unsupported = false) {
+        const running = audio.enabled && audio.context?.state === 'running';
+        $('sound-toggle').textContent = unsupported ? 'صدا در دسترس نیست' : !audio.enabled ? '🔇 صدا خاموش' : running ? '🔊 صدا روشن' : '🔊 فعال‌کردن صدا';
+        $('sound-toggle').setAttribute('aria-pressed', String(Boolean(running)));
+        $('sound-hint').hidden = !audio.enabled || Boolean(running) || unsupported;
+      }
+      // بازکردن قفل صوت با یک لمس واقعی؛ hover به‌تنهایی مجوز پخش خودکار نیست.
+      function unlockOnGesture(event) {
+        if (!event.isTrusted || event.target.closest('#sound-toggle')) return;
+        audio.unlock();
+      }
+      document.addEventListener('pointerdown', unlockOnGesture, { capture: true, passive: true });
+      document.addEventListener('keydown', unlockOnGesture, { capture: true });
+      $('sound-toggle').addEventListener('click', () => {
+        if (audio.enabled && audio.context?.state === 'running') audio.setEnabled(false);
+        else { audio.setEnabled(true); audio.unlock(); audio.play('confirm'); }
+      });
+      document.querySelectorAll('[data-sound]').forEach(button => button.addEventListener('click', () => {
+        audio.setEnabled(true);
+        audio.unlock();
+        audio.play(button.dataset.sound);
+      }));
+
+      function stopCelebration() {
+        celebrationTimers.forEach(clearTimeout);
+        celebrationTimers = [];
+        document.querySelectorAll('.fallback-heart').forEach(heart => heart.remove());
+        if (typeof window.confetti?.reset === 'function') window.confetti.reset();
+      }
+      function resetResponse() {
+        stopCelebration();
+        accepted = false;
+        attempts = 0;
+        lastEscape = -Infinity;
+        noButton.hidden = false;
+        noButton.classList.remove('escaped');
+        noButton.style.removeProperty('left');
+        noButton.style.removeProperty('top');
+        $('invitation').hidden = false;
+        $('success').hidden = true;
+        $('telegram').removeAttribute('href');
+        $('joke').textContent = 'شنیدم دکمهٔ «نه» امروز یکم شیطون شده… 👀';
+      }
+      function updateSelection() {
+        if (config.mode === 'single') selected = { date: config.date, time: config.start };
+        else if (config.mode === 'choices') {
+          const choice = document.querySelector('input[name="invited-time"]:checked');
+          selected = choice ? { ...config.options[Number(choice.value)] } : null;
+        } else {
+          const date = validateSolar($('pick-date'));
+          const time = $('pick-time').value;
+          $('pick-time').min = date === config.date ? config.start : '00:00';
+          $('pick-time').max = date === config.endDate ? config.end : '23:59';
+          const inside = validDate(date) && validTime(time) && stamp(date, time) >= stamp(config.date, config.start) && stamp(date, time) <= stamp(config.endDate, config.end);
+          selected = inside ? { date, time } : null;
+        }
+        yesButton.disabled = !selected;
+        $('selection-note').hidden = config.mode === 'single';
+        $('selection-note').textContent = selected ? 'انتخاب تو: ' + showSlot(selected) + ' 🌸' : config.mode === 'choices' ? 'اول یکی از زمان‌های بالا رو انتخاب کن 🌷' : 'یک روز و ساعت داخل بازهٔ بالا انتخاب کن 🌷';
+      }
+      function renderInvitation() {
+        resetResponse();
+        document.title = config.recipient + '، بریم زنگ تفریح؟ 💌';
+        $('salutation').textContent = config.recipient + ' عزیز،';
+        $('sender-title').textContent = config.sender;
+        $('footer-recipient').textContent = 'فقط برای ' + config.recipient;
+        $('invitation-card').setAttribute('aria-label', 'دعوت‌نامهٔ ' + config.recipient);
+        $('place-note').textContent = [config.place ? '📍 ' + config.place : '', config.note].filter(Boolean).join('\n');
+        $('place-note').hidden = !config.place && !config.note;
+        $('day-caption').textContent = config.mode === 'range' ? 'از این روز' : 'روز زنگ تفریح';
+        $('time-caption').textContent = config.mode === 'range' ? 'تا این روز' : config.mode === 'choices' ? 'انتخاب با توئه!' : 'سرِ وقت بیا، همکلاسی!';
+        $('date-label').textContent = config.mode === 'choices' ? faNumber(config.options.length) + ' پیشنهادِ خوشمزه' : showDate(config.date) + (config.mode === 'range' ? '، ' + showTime(config.start) : '');
+        $('time-label').textContent = config.mode === 'range' ? showDate(config.endDate) + '، ' + showTime(config.end) : config.mode === 'choices' ? 'یکیش رو انتخاب کن ↓' : showTime(config.start);
+        $('date-ticket').setAttribute('aria-label', $('date-label').textContent + '؛ ' + $('time-label').textContent);
+        const when = config.mode === 'single' ? showSlot({ date: config.date, time: config.start }) : config.mode === 'range' ? 'در بازهٔ پیشنهادی، هر وقتی راحت‌تری' : 'در یکی از زمان‌های پیشنهادی';
+        $('question').textContent = 'آیا ' + config.recipient + ' افتخار می‌دهند ' + when + ' برای ' + config.activity + ' و زنگ تفریح تشریف بیاورند؟ 🥺';
+        $('time-options').hidden = config.mode !== 'choices';
+        $('range-selection').hidden = config.mode !== 'range';
+        $('recipient-options').replaceChildren();
+        if (config.mode === 'choices') {
+          config.options.forEach((option, i) => {
+            const label = document.createElement('label');
+            label.className = 'time-option';
+            const input = document.createElement('input');
+            input.type = 'radio'; input.name = 'invited-time'; input.value = String(i);
+            const span = document.createElement('span');
+            span.textContent = showSlot(option);
+            label.append(input, span);
+            input.addEventListener('change', () => { updateSelection(); audio.play('confirm'); });
+            $('recipient-options').appendChild(label);
+          });
+        }
+        $('pick-date').value = '';
+        $('pick-time').value = '';
+        $('pick-date').setCustomValidity('');
+        $('pick-date').dataset.min = config.date;
+        $('pick-date').dataset.max = config.endDate;
+        selected = null;
+        updateSelection();
+        updateSoundUI();
+      }
+
+      function setEditorVisible(visible) {
+        $('editor').hidden = !visible;
+        $('workspace').classList.toggle('guest', !visible);
+        $('editor-toggle').setAttribute('aria-expanded', String(visible));
+        $('editor-toggle').textContent = visible ? 'پنهان‌کردن تنظیمات' : 'تنظیم دعوت‌نامه 🖍️';
+        keepNoInView();
+      }
+      function status(message, ok = false) {
+        $('editor-status').textContent = message;
+        $('editor-status').classList.toggle('ok', ok);
+      }
+      function updateEditorMode() {
+        const mode = form.elements.mode.value;
+        $('fixed-fields').hidden = mode === 'choices';
+        $('fixed-fields').disabled = mode === 'choices';
+        $('choice-fields').hidden = mode !== 'choices';
+        $('choice-fields').disabled = mode !== 'choices';
+        $('range-fields').hidden = mode !== 'range';
+        $('end-date').disabled = mode !== 'range';
+        $('end').disabled = mode !== 'range';
+        $('end-date').required = mode === 'range';
+        $('end').required = mode === 'range';
+        $('start-label').hidden = mode !== 'range';
+        $('time-start-label').hidden = mode !== 'range';
+        const startISO = validateSolar($('date'));
+        const endISO = validateSolar($('end-date'));
+        $('end-date').dataset.min = startISO;
+        $('persian-date').textContent = startISO ? showDate(startISO) : '';
+        $('persian-end-date').textContent = endISO ? showDate(endISO) : '';
+        document.querySelectorAll('.calendar-open').forEach(button => { button.disabled = button.previousElementSibling.disabled; });
+        $('add-option').disabled = $('option-editors').children.length >= 5;
+        [...$('option-editors').children].forEach((row, i) => {
+          row.querySelector('.option-number').textContent = 'پیشنهاد ' + faNumber(i + 1);
+          row.querySelector('.remove-option').disabled = $('option-editors').children.length <= 2;
+        });
+      }
+      function addOption(option) {
+        const row = document.createElement('div');
+        row.className = 'option-editor';
+        // این HTML ثابت است؛ مقدار ورودی کاربر فقط با value/textContent وارد می‌شود.
+        row.innerHTML = '<div class="option-heading"><span class="option-number"></span><button type="button" class="remove-option">حذف ×</button></div><div class="field-grid"><label class="field">تاریخ شمسی<input type="text" class="option-date solar-input" inputmode="numeric" placeholder="۱۴۰۵/۰۸/۰۸" maxlength="10" required><small class="option-persian"></small></label><label class="field">ساعت<input type="time" class="option-time" required></label></div>';
+        row.querySelector('.option-date').value = solarText(option.date);
+        decorateSolar(row.querySelector('.option-date'));
+        row.querySelector('.option-time').value = option.time;
+        row.querySelector('.option-persian').textContent = validDate(option.date) ? showDate(option.date) : '';
+        row.querySelector('.remove-option').addEventListener('click', () => {
+          if ($('option-editors').children.length <= 2) return;
+          row.remove(); updateEditorMode(); syncForm();
+        });
+        $('option-editors').appendChild(row);
+      }
+      function fillForm() {
+        for (const key of ['recipient', 'sender', 'activity', 'place', 'note', 'telegram']) form.elements[key].value = config[key];
+        const date = config.date || config.options[0]?.date || nextFriday();
+        $('date').value = solarText(date);
+        $('start').value = config.start || '16:30';
+        $('end-date').value = solarText(config.endDate || date);
+        $('end').value = config.end || '18:30';
+        form.elements.mode.value = config.mode;
+        $('sounds-enabled').checked = config.sounds;
+        const options = config.options.length ? config.options : [{ date, time: '16:30' }, { date: addDays(date, 1), time: '17:30' }];
+        options.forEach(addOption);
+        updateEditorMode();
+      }
+      function readForm() {
+        const raw = {};
+        for (const key of ['recipient', 'sender', 'activity', 'place', 'note', 'telegram', 'date', 'start', 'endDate', 'end', 'mode']) raw[key] = form.elements[key].value;
+        raw.date = validateSolar($('date'));
+        raw.endDate = validateSolar($('end-date'));
+        raw.sounds = $('sounds-enabled').checked;
+        raw.options = [...$('option-editors').children].map(row => ({ date: validateSolar(row.querySelector('.option-date')), time: row.querySelector('.option-time').value }));
+        return normalize(raw);
+      }
+      function syncForm() {
+        $('link-output').hidden = true;
+        $('share-link').value = '';
+        $('option-editors').querySelectorAll('.option-editor').forEach(row => {
+          const date = validateSolar(row.querySelector('.option-date'));
+          row.querySelector('.option-persian').textContent = validDate(date) ? showDate(date) : '';
+        });
+        updateEditorMode();
+        try {
+          const next = readForm();
+          const changedSounds = config.sounds !== next.sounds;
+          config = next;
+          if (changedSounds) audio.setEnabled(config.sounds);
+          renderInvitation();
+          status('پیش‌نمایش با تنظیماتت به‌روز شد 🌷', true);
+          return true;
+        } catch (error) {
+          status(error.message + ' پیش‌نمایش، آخرین تنظیمات کامل را نشان می‌دهد.');
+          return false;
+        }
+      }
+      function readyForOutput() {
+        const valid = syncForm();
+        if (!valid) form.reportValidity();
+        return valid;
+      }
+      function shareURL() {
+        if (!['https:', 'http:'].includes(location.protocol) || ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
+          throw new Error('برای لینک قابل ارسال، اول همین index.html را روی GitHub Pages باز کن. فعلاً می‌توانی فایل HTML تنظیم‌شده را دانلود کنی.');
+        }
+        const url = new URL(location.href);
+        url.search = '';
+        url.hash = 'invite=' + encodePayload(config);
+        return url.href;
+      }
+      $('copy-link').addEventListener('click', async () => {
+        if (!readyForOutput()) return;
+        try {
+          const url = shareURL();
+          $('share-link').value = url;
+          $('link-output').hidden = false;
+          try {
+            await navigator.clipboard.writeText(url);
+            status('لینک کپی شد؛ همین لینک را برای مهمانت بفرست 💌', true);
+          } catch (error) {
+            $('share-link').focus(); $('share-link').select();
+            status('لینک آماده است؛ از کادر بالا آن را دستی کپی کن.', true);
+          }
+        } catch (error) { status(error.message); }
+      });
+      $('open-link').addEventListener('click', () => {
+        if ($('share-link').value) window.open($('share-link').value, '_blank', 'noopener,noreferrer');
+      });
+      $('download-html').addEventListener('click', () => {
+        if (!readyForOutput()) return;
+        const blob = new Blob([buildInvitationHTML(config)], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = 'invitation.html';
+        document.body.appendChild(anchor); anchor.click(); anchor.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 30000);
+        status('فایل دعوت‌نامه آماده شد؛ می‌توانی همان فایل را بفرستی یا جداگانه روی سایت بگذاری 💌', true);
+        audio.play('confirm');
+      });
+      form.addEventListener('submit', event => event.preventDefault());
+      form.addEventListener('input', syncForm);
+      form.addEventListener('change', syncForm);
+      $('add-option').addEventListener('click', () => {
+        if ($('option-editors').children.length >= 5) return;
+        const last = $('option-editors').lastElementChild;
+        const date = (last ? readSolar(last.querySelector('.option-date')) : '') || readSolar($('date')) || nextFriday();
+        addOption({ date: addDays(date, 1), time: '16:30' });
+        updateEditorMode(); syncForm();
+      });
+      $('editor-toggle').addEventListener('click', () => setEditorVisible($('editor').hidden));
+      $('reset-preview').addEventListener('click', renderInvitation);
+      $('change-selection').addEventListener('click', () => {
+        resetResponse(); updateSelection();
+        (config.mode === 'range' ? $('pick-date') : document.querySelector('input[name="invited-time"]:checked'))?.focus();
+      });
+      $('pick-date').addEventListener('input', updateSelection);
+      $('pick-time').addEventListener('input', updateSelection);
+
+      const jokes = [
+        'این گزینه خراب است! لطفاً از دکمهٔ صورتی استفاده کنید 🤭',
+        'دکمه نه اعتصاب کرده! بستنی می‌خواد 🍦',
+        'اوه! باز از صفِ مهدکودک فرار کرد 🙈',
+        'این‌همه دنبال من ندو، بستنی‌مون آب شد! 🫠',
+        'دستت به من نمی‌رسه؛ قهرمانِ قایم‌باشکم! 🏃',
+        'به من نگاه نکن، من فقط یه دکمهٔ شیطونم 😌',
+        'اندازه‌م همینه؛ ولی سرعتم خیلی زیاده! 🫧'
+      ];
+
+      function moveNo(pointerX, pointerY) {
+        const viewport = window.visualViewport;
+        const left = (viewport?.offsetLeft || 0) + 12;
+        const top = (viewport?.offsetTop || 0) + 12;
+        const width = viewport?.width || window.innerWidth;
+        const height = viewport?.height || window.innerHeight;
+        const old = noButton.getBoundingClientRect();
+        if (!Number.isFinite(pointerX)) pointerX = old.left + old.width / 2;
+        if (!Number.isFinite(pointerY)) pointerY = old.top + old.height / 2;
+        noButton.classList.add('escaped');
+        const maxX = Math.max(left, left + width - old.width - 24);
+        const maxY = Math.max(top, top + height - old.height - 24);
+        const protectedRects = [...document.querySelectorAll('button:not(#no), a, input, select, textarea')]
+          .map(element => element.getBoundingClientRect()).filter(rect => rect.width && rect.height);
+        const overlaps = (x, y, rect) => x < rect.right + 8 && x + old.width > rect.left - 8 && y < rect.bottom + 8 && y + old.height > rect.top - 8;
+        let best = null;
+        // گوشه‌ها + نقاط تصادفی؛ دکمه از انگشت دور می‌شود و روی کنترل‌های دیگر نمی‌نشیند.
+        const candidates = [{ x: left, y: top }, { x: maxX, y: top }, { x: left, y: maxY }, { x: maxX, y: maxY }];
+        for (let i = 0; i < 80; i++) candidates.push({ x: left + Math.random() * (maxX - left), y: top + Math.random() * (maxY - top) });
+        for (const { x, y } of candidates) {
+          if (protectedRects.some(rect => overlaps(x, y, rect))) continue;
+          const distance = Math.hypot(x + old.width / 2 - pointerX, y + old.height / 2 - pointerY);
+          if (!best || distance > best.distance) best = { x, y, distance };
+        }
+        // در viewport بسیار کوچک هم کلیک «نه» مسدود است؛ اندازهٔ هیچ دکمه‌ای تغییر نمی‌کند.
+        noButton.style.left = (best?.x ?? left) + 'px';
+        noButton.style.top = (best?.y ?? maxY) + 'px';
+      }
+      function escapeNo(event) {
+        if (event.cancelable) event.preventDefault();
+        if (accepted) return;
+        const now = performance.now();
+        if (now - lastEscape >= 180) {
+          lastEscape = now;
+          attempts++;
+          $('joke').textContent = jokes[(attempts - 1) % jokes.length];
+          audio.play('boing');
+        }
+        // حتی رویدادهای سریع و کلیک مصنوعی هم «نه» را انتخاب نمی‌کنند.
+        moveNo(event.clientX, event.clientY);
+      }
+      noButton.addEventListener('pointerenter', event => {
+        if (event.pointerType !== 'touch') escapeNo(event);
+      });
+      noButton.addEventListener('pointerdown', escapeNo, { passive: false });
+      noButton.addEventListener('click', escapeNo);
+      noButton.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') escapeNo(event);
+      });
+      // فرار پیش از رسیدن ماوس؛ لمس موبایل در pointerdown گرفته و لغو می‌شود.
+      document.addEventListener('pointermove', event => {
+        if (accepted || $('solar-calendar').open || event.pointerType === 'touch' || performance.now() - lastEscape < 180) return;
+        const rect = noButton.getBoundingClientRect();
+        if (event.clientX >= rect.left - 20 && event.clientX <= rect.right + 20 && event.clientY >= rect.top - 20 && event.clientY <= rect.bottom + 20) escapeNo(event);
+      }, { passive: false });
+      function keepNoInView() {
+        if (!accepted && noButton.classList.contains('escaped')) moveNo();
+      }
+      window.addEventListener('resize', keepNoInView);
+      window.visualViewport?.addEventListener('resize', keepNoInView);
+      window.visualViewport?.addEventListener('scroll', keepNoInView);
+
+      function celebrate() {
+        audio.play('celebrate');
+        if (reducedMotion.matches) return;
+        for (let i = 0; i < 24; i++) {
+          const heart = document.createElement('span');
+          heart.className = 'fallback-heart'; heart.setAttribute('aria-hidden', 'true');
+          heart.textContent = ['♥', '💗', '✨'][i % 3];
+          heart.style.left = Math.random() * 95 + 'vw';
+          heart.style.color = ['#ed91aa', '#e9c870', '#99c5d8'][i % 3];
+          heart.style.animationDelay = Math.random() * 1.1 + 's';
+          document.body.appendChild(heart);
+          celebrationTimers.push(setTimeout(() => heart.remove(), 4500));
+        }
+        if (typeof window.confetti === 'function') {
+          const colors = ['#ef99b0', '#f0d585', '#a7d3e2', '#bcd5b2', '#c5b5de'];
+          try {
+            window.confetti({ particleCount: 120, spread: 85, origin: { y: 0.62 }, colors, disableForReducedMotion: true });
+            celebrationTimers.push(setTimeout(() => {
+              window.confetti({ particleCount: 55, angle: 60, spread: 65, origin: { x: 0, y: 0.65 }, colors, disableForReducedMotion: true });
+              window.confetti({ particleCount: 55, angle: 120, spread: 65, origin: { x: 1, y: 0.65 }, colors, disableForReducedMotion: true });
+            }, 350));
+          } catch (error) { /* جشن قلب‌ها بدون CDN هم کار می‌کند. */ }
+        }
+      }
+      yesButton.addEventListener('click', () => {
+        if (accepted) return;
+        updateSelection();
+        if (!selected) return;
+        accepted = true;
+        noButton.hidden = true;
+        $('invitation').hidden = true;
+        $('success').hidden = false;
+        $('confirmed').textContent = showSlot(selected) + ' منتظرتم ❤️';
+        const confirmation = 'سلام! من رسماً تایید کردم که ' + showSlot(selected) + ' میام برای قرار مهدکودکمون 👧🏻🌸\nبرنامه: ' + config.activity + (config.place ? '\nمحل: ' + config.place : '') + '\nمنتظرم باش ❤️';
+        $('telegram').href = 'https://t.me/' + config.telegram + '?text=' + encodeURIComponent(confirmation);
+        $('change-selection').hidden = config.mode === 'single';
+        $('success-title').focus({ preventScroll: true });
+        celebrate();
+      });
+      $('telegram').addEventListener('click', () => audio.play('confirm'));
+
+      for (let month = 1; month <= 12; month++) {
+        const option = document.createElement('option'); option.value = String(month); option.textContent = solarMonths[month - 1];
+        $('calendar-month').appendChild(option);
+      }
+      for (let year = 1280; year <= 1578; year++) {
+        const option = document.createElement('option'); option.value = String(year); option.textContent = faNumber(year);
+        $('calendar-year').appendChild(option);
+      }
+      $('calendar-prev').addEventListener('click', () => turnCalendar(-1));
+      $('calendar-next').addEventListener('click', () => turnCalendar(1));
+      $('calendar-month').addEventListener('change', () => { calendarMonth = Number($('calendar-month').value); renderCalendar(); });
+      $('calendar-year').addEventListener('change', () => { calendarYear = Number($('calendar-year').value); renderCalendar(); });
+      $('calendar-close').addEventListener('click', () => $('solar-calendar').close());
+      $('solar-calendar').addEventListener('click', event => { if (event.target === $('solar-calendar')) $('solar-calendar').close(); });
+      document.querySelectorAll('.solar-input').forEach(decorateSolar);
+      fillForm();
+      $('editor-toggle').hidden = guest;
+      $('preview-tools').hidden = guest;
+      setEditorVisible(!guest);
+      renderInvitation();
+    })();
+  </script>
+</body>
+</html>
